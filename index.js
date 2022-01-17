@@ -9,7 +9,7 @@ const client = new Client({
   host: process.env.POSTGRES_HOST || 'localhost',
   port: 5432,
   database: 'docker_test',
-  password: '123'
+  password: '123',
 })
 
 client.connect()
@@ -30,11 +30,11 @@ const add = async (req, res) => {
 }
 
 module.exports = router(
-    get('/', index),
+    get('/', index), 
     get('/add', add)
 )
 
-client.query("SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_schema = 'public' AND table_name = 'messages')", (err, result) => {
+client.query("SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE  table_schema = 'public' AND table_name = 'messages')", (err, result) => {
     if (!result.rows[0].exists) {
         client.query('create table messages (text varchar(255));')
     }
