@@ -1,4 +1,4 @@
-M alpine
+FROM alpine
 
 RUN apk add git \
         && apk add yarn \
