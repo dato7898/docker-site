@@ -4,7 +4,7 @@ const { router, get, post } = require('microrouter')
 const url = require('url')
 const redirect = require('micro-redirect')
 
-const Client = new Client({
+const client = new Client({
   user: 'postgres',
   host: process.env.POSTGRES_HOST || 'localhost',
   port: 5432,
