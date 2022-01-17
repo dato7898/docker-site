@@ -29,7 +29,7 @@ const add = async (req, res) => {
     redirect(res, 302, '/')
 }
 
-module.export = router(
+module.exports = router(
     get('/', index),
     get('/add', add)
 )
