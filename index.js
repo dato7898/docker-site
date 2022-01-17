@@ -25,7 +25,7 @@ const index = async (req, res) => {
 
 const add = async (req, res) => {
     const parts = url.parse(req.url, true)
-    const result = await client.query('insert into messages values ($1)'. [parts.query.text])
+    const result = await client.query('insert into messages values ($1)', [parts.query.text])
     redirect(res, 302, '/')
 }
 
